@@ -17,6 +17,7 @@
 package com.example.android.codelabs.navigation
 
 import android.os.Bundle
+import android.util.Log
 import android.view.*
 import android.widget.Button
 import androidx.fragment.app.Fragment
@@ -60,5 +61,14 @@ class HomeFragment : Fragment() {
 
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
         inflater.inflate(R.menu.main_menu, menu)
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        when(item.itemId) {
+            R.id.shopping_cart -> {
+                findNavController().navigate(HomeFragmentDirections.cartAction("Args"))
+            }
+        }
+        return true
     }
 }

@@ -27,6 +27,10 @@
             app:exitAnim="@anim/slide_out_left"
             app:popEnterAnim="@anim/slide_in_left"
             app:popExitAnim="@anim/slide_out_right" />
+        <action
+            android:id="@+id/cart_action"
+            app:destination="@id/shoppingFragment">
+        </action>
     </fragment>
 
     <fragment
@@ -77,4 +81,15 @@
         android:name="com.example.android.codelabs.navigation.SettingsFragment"
         android:label="settings_fragment"
         tools:layout="@layout/settings_fragment" />
+
+    <fragment
+        android:id="@+id/shoppingFragment"
+        android:name="com.example.android.codelabs.navigation.ShoppingFragment"
+        android:label="CartFragment" >
+
+        <argument
+            android:name="title"
+            app:argType="string"
+            android:defaultValue="hoge"/>
+    </fragment>
 </navigation>
